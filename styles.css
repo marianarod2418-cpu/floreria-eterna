@@ -1,0 +1,260 @@
+/* --- Variables de Colores (Aquí puedes cambiar los tonos de tu página) --- */
+:root {
+    --lila: #d9c7ff;
+    --rosa: #ffd6e7;
+    --lavanda: #bfa2ff;
+    --crema: #fff9f5;
+    --texto: #4d4063;
+    --blanco: #ffffff;
+}
+
+/* --- Configuraciones Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+}
+
+/* --- Encabezado y Menú de Navegación --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    padding: 15px 8%;
+    box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Fredoka', cursive;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--lavanda);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--lavanda);
+}
+
+/* --- Sección de Inicio (Portada) --- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 8%;
+    gap: 50px;
+    background: linear-gradient(135deg, #fff8ff, #f7eeff);
+}
+
+.hero h1 {
+    font-family: 'Fredoka', cursive;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* --- Botones --- */
+.btn {
+    background: var(--lavanda);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid var(--lavanda);
+    color: var(--lavanda);
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 35px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+}
+
+/* --- Cintillo animado (Marquee) --- */
+.marquee {
+    background: var(--lavanda);
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* --- Estructura de Secciones --- */
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Fredoka', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* --- Tarjetas de Servicios --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card button {
+    background: var(--lavanda);
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* --- Catálogo y Contacto --- */
+.catalogo, .contacto {
+    background: white;
+    border-radius: 35px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.contacto p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+/* --- Galería de Fotos --- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 300px; /* Si quieres que las fotos de la galería se vean más altas o bajas, cambia este número */
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* --- Sección Nosotros --- */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background: var(--lavanda);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    font-family: 'Fredoka', cursive;
+}
+
+/* --- Adaptación para Celulares (Diseño Responsivo) --- */
+@media(max-width: 768px) {
+    .hero,
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
